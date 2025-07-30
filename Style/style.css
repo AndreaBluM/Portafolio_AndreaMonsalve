@@ -1,0 +1,210 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #210613;
+}
+
+
+nav {
+  padding: 1rem 2rem;
+  background-color: #542f4127;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ }
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.navbar-menu li:hover{
+  color: #D98D62;
+}
+
+.boton{
+  background-color: #9e8fad;
+  color: #eceef4 ;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 50px;
+}
+
+.contenedor-sobremi{
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedor-titulo{
+  padding: 20px;
+  margin-left: 60px;
+  color: #eceef4;
+}
+
+.orbita {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px dashed #555; /* solo para ver el contorno */
+  margin: 50px auto;
+}
+
+.orbit {
+  width: 40px;
+  height: 40px;
+  background: #D90452;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+
+.about {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.about-text button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: #D90452;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.about-text button:hover {
+  background: #BF045B;
+}
+
+/* SKILLS */
+.skills {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f8f8;
+}
+
+
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.skill-card {
+  background-color: #303440;
+  color: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border: 2px solid #D98D62;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+  background-color: #D98D62;
+  color: #303440;
+}
+
+/* PROJECTS */
+.projects {
+  padding: 2rem;
+  background-color: #f0f0f0;
+}
+
+
+.project-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  color: #303440;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #D98D62;
+}
+
+.project-img {
+  background: #ccc;
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+
+.carousel-dots {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #D90452;
+}
+
