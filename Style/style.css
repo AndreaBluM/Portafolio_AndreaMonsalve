@@ -1,24 +1,358 @@
+/* Botón planetario para Download CV */
+.planet-btn {
+  background: linear-gradient(90deg, #bfa13a 0%, #ffe08a 100%);
+  color: #222;
+  border: none;
+  border-radius: 50px 50px 60px 60px / 50px 50px 80px 80px;
+  padding: 0.85em 2.2em;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 24px #bfa13a44, 0 2px 8px #7a9fbf33;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.4s, color 0.3s, box-shadow 0.4s, transform 0.3s;
+  z-index: 1;
+}
+
+.planet-btn::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle at 60% 40%, #7a9fbf 0%, #bfa13a 60%, #ffe08a 100%);
+  border-radius: 50%;
+  opacity: 0.18;
+  transform: translate(-50%, -50%) scale(1);
+  transition: width 0.5s, height 0.5s, opacity 0.5s;
+  z-index: 0;
+}
+
+.planet-btn:hover {
+  background: linear-gradient(100deg, #7a9fbf 0%, #ffe08a 80%, #bfa13a 100%);
+  color: #fff;
+  box-shadow: 0 0 60px 20px #7a9fbf99, 0 8px 32px 0 #bfa13a66;
+  transform: scale(1.06) rotate(-2deg);
+}
+
+.planet-btn:hover::before {
+  width: 340px;
+  height: 340px;
+  opacity: 0.32;
+}
+
+.planet-btn:active {
+  transform: scale(0.98) rotate(1deg);
+  box-shadow: 0 2px 8px #bfa13a44;
+}
+/* Imagen redonda con borde tipo planeta */
+.planet-image-container {
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planet-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 8px solid transparent;
+  background:
+    radial-gradient(circle at 60% 40%, #ffe08a 0%, #e0b96a 40%, #bfa13a 80%, #7a9fbf 100%);
+  box-shadow: 0 0 40px 10px #bfa13a44, 0 8px 32px 0 #bfa13a33;
+  transition: box-shadow 0.4s, transform 0.4s, background 0.4s;
+}
+@keyframes planet-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.planet-image:hover {
+  box-shadow: 0 0 80px 20px #BF6734, 0 8px 32px 0 #bfa13a66;
+  transform: rotate(-8deg) scale(1.04);
+  background:
+    radial-gradient(circle at 40% 60%, #BF6734 0%, #bfa13a 50%, #ffe08a 100%);
+}
+/* Paleta de colores principal */
+:root {
+  --azul-oscuro: #010A26;
+  --azul-claro: #7A9FBF;
+  --naranja: #F2A057;
+  --naranja-oscuro: #BF6734;
+  --negro: #0D0D0D;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Share Tech Mono', monospace;
+}
+body.light-theme {
+  background: #f6f6f6;
+  color: #222;
+}
+
+body.light-theme .space-container {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-theme nav {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .titulo-personalizado,
+body.light-theme .contenedor-titulo,
+body.light-theme .navbar-menu li {
+  color: #222 !important;
+}
+
+body.light-theme .laura-andrea {
+  color: #222;
+}
+
+body.light-theme .monsalve-span {
+  color: #e0bd71;
+}
+
+body.light-theme .stack-grande {
+  color: #555;
+}
+
+body.light-theme .saturn-planet {
+  background: radial-gradient(circle at 30% 30%, #fffde3 40%, #ffe5a3 60%, #e0b96a 100%);
+}
+
+body.light-theme .saturn-ring {
+  border-color: #bbb;
+}
+
+body.light-theme .saturn-icon {
+  background: #eee;
+  color: #222 !important;
+}
+
+body.light-theme .saturn-icon:hover {
+  background: #ffe066;
+  color: #222 !important;
+}
+
+/* Saturn Widget Styles */
+.saturn-widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.saturn-orbit {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.saturn-planet {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow: hidden;
+  background:
+    /* bandas anchas horizontales y ligeramente diagonales */
+    linear-gradient(-12deg,
+      #bfa13a 0%,
+      #e0b96a 25%,
+      #f2c14d 45%,
+      #ffe08a 60%,
+      #e0b96a 80%,
+      #bfa13a 100%
+    ),
+    radial-gradient(circle at 40% 35%, #fffbe3 0%, transparent 60%),
+    radial-gradient(circle at 60% 70%, #fffbe3 0%, transparent 70%),
+    radial-gradient(circle at 50% 100%, #bfa13a 0%, transparent 80%);
+  box-shadow: 0 0 40px 10px #bfa13a44, 0 8px 32px 0 #bfa13a33;
+  animation: saturn-spin 12s linear infinite;
+}
+
+
+.saturn-planet::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 85px;
+  width: 170px;
+  height: 28px;
+  border-radius: 50%;
+  opacity: 0.45;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.saturn-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 260px;
+  height: 90px;
+  border: 7px solid #bdbdbd;
+  border-radius: 50% / 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  z-index: 1;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.saturn-icon {
+  position: absolute;
+  color: #fff !important;
+  font-size: 1.2rem;
+  background: #222c;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px #0004;
+  pointer-events: auto;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.saturn-icon.github {
+  left: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  background: #222c;
+}
+
+.saturn-icon.linkedin {
+  right: 0%;
+  top: 50%;
+  transform: translate(50%, -50%) rotate(-20deg);
+  background: #222c;
+}
+
+.saturn-icon:hover {
+  background: #fff;
+  color: #222 !important;
+  transform: scale(1.15);
+  z-index: 3;
+}
+
+/* Estilos personalizados para el título principal */
+.titulo-personalizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05em;
+  color: #eceef4;
+  text-align: center;
+}
+
+.iam-col {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #b3b3b3;
+  text-align: center;
+  width: 100%;
+}
+
+.laura-andrea {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.monsalve-span {
+  font-size: 2.0rem;
+  font-weight: 600;
+  color: #e0bd71;
+  letter-spacing: 0.05em;
+  text-align: center;
+  width: 100%;
+  line-height: 1;
+}
+
+.stack-grande {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #b3b3b3;
+  margin-top: 0.1em;
+  text-align: center;
+  width: 100%;
+  line-height: 1;
 }
 
 body {
-  background-image: url(/img/pexels-francesco-ungaro-998641.jpg);
-  background-size: cover;
+  background: #0D0D0D;
   font-family: 'Share Tech Mono', monospace;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  display: none;
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   padding: 1rem 2rem;
-  background-color: #0d0d0d99;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: rgba(20, 20, 30, 0.35);
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 18px 18px;
+  z-index: 10;
 }
 
-.space-container{
-  background-color: rgba(0, 0, 0, 0.5);
+.nav-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
+
+.nav-title h2 {
+  color: #7A9FBF;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.space-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -56,74 +390,30 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 14rem;
 }
 
 .contenedor-titulo {
   padding: 20px;
-  margin-left: 60px;
+  margin-left: 0;
   color: #eceef4;
 }
 
-.saturn-widget {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
-  /* centrar si quieres */
-}
-
-.saturn-planet {
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle at 40% 40%, #f5c273, #c38b4e);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 50px #f5c273;
-}
-
-.saturn-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 250px;
-  height: 40px;
-  border: 2px solid #aaa;
-  transform: translate(-50%, -50%) rotate(15deg);
-  border-radius: 50%;
+/* Estilo para sobre mi */
+.about {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding: 0 20px;
-  background: rgba(255, 255, 255, 0.1);
+  gap: 14rem;
+  padding: 2rem;
+  justify-content: center;
 }
-
-.ring-icon {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 10px;
-  background: rgba(100, 100, 100, 0.3);
-  border-radius: 20px;
-  font-family: sans-serif;
-  font-size: 14px;
-  transition: transform 0.3s;
+.about-text {
+  max-width: 600px;
+  color: var(--azul-claro);
 }
-
-.ring-icon:hover {
-  transform: scale(1.2);
-}
-
-.social-icon {
-  color: white;
-  font-size: 1.5rem;
-  margin-top: 12px;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-}
-
-.social-icon:hover {
-  transform: scale(1.3);
-  text-shadow: 0 0 20px rgba(224, 189, 113, 0.8);
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: whitesmoke;
 }

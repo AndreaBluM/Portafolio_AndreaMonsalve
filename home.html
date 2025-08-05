@@ -12,10 +12,14 @@
 </head>
 
 <body>
+    <canvas id="star-canvas" style="position:fixed;top:0;left:0;z-index:-10;pointer-events:none;"></canvas>
     <nav>
         <div class="nav-container">
-            <div>
-                <button></button>
+            <div class="nav-title">
+                <h2>Andrea Dev</h2>
+                <button id="theme-toggle" aria-label="Cambiar tema" style="background:none;border:none;cursor:pointer;font-size:2rem;vertical-align:middle;margin-left:10px;color:#ffe066;">
+                  <i id="theme-icon" class="fas fa-moon"></i>
+                </button>
             </div>
             <ul class="navbar-menu">
                 <li>Inicio</li>
@@ -31,18 +35,24 @@
         <div  class="stars" id="stars">
             <div class="contenedor-sobremi">
             <div class="contenedor-titulo">
-                <h1>I am <span> Laura Andrea Monsalve</span><br /><small>Full Stack Java | QA automation </small>
+                <h1 class="titulo-personalizado">
+                    <span class="iam-col">I am</span>
+                    <span class="laura-andrea">Laura Andrea</span><br />
+                    <span class="monsalve-span">Monsalve Velasquez</span><br />
+                    <span class="stack-grande">Full Stack Java | QA automation</span>
                 </h1>
             </div>
             <div class="saturn-widget">
-                <div class="saturn-planet"></div>
-                <div class="saturn-ring">
-                    <a href="https://github.com/AndreaBluM" target="_blank" class="social-icon github">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/andrea-mondev/" target="_blank" class="social-icon linkedin">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+                <div class="saturn-orbit">
+                    <div class="saturn-planet"></div>
+                    <div class="saturn-ring">
+                        <a href="https://github.com/" target="_blank" class="saturn-icon github" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank" class="saturn-icon linkedin" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,16 +61,17 @@
 
     </section>
 
-
     <main>
         <section id="about" class="about">
             <div class="profile-pic">
-                <img src="" alt="">
+                <div class="planet-image-container">
+                  <img src="/img/WhatsApp Image 2025-05-27 at 3.21.12 PM.jpeg" alt="Foto de perfil" class="planet-image">
+                </div>
             </div>
             <div class="about-text">
                 <h2>Acerca de mi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor.</p>
-                <button>Download CV</button>
+                <p>Soy Desarrolladora Full Stack también cuento con conocimientos en QA Automation, egresada de Digital House como Professional Developer y con formación adicional en Globant y Generation. Tengo experiencia desarrollando aplicaciones con tecnologías como Java (Spring Boot), JavaScript, React, Python y SQL, así como en testing manual y automatizado con herramientas como Cypress, Selenium, Postman y Screenplay.</p>
+                <button class="planet-btn">Download CV</button>
             </div>
         </section>
         <section id="projects" class="projects">
