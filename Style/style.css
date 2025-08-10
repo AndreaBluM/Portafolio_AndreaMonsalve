@@ -1,3 +1,119 @@
+/* Habilidades grid 2x2 */
+.skillsBox{
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding:  0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  max-width: 50rem;
+}
+
+.skill-card-grid {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem 1rem 1rem 1rem;
+  width: 100%;
+  max-width: 20rem;
+  min-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pyramid-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin-top: 0.5rem;
+}
+
+
+.iconCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem;
+}
+.iconCont p {
+  font-size: 0.9rem;
+  color: var(--azul-claro);
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.tech-planet-icon {
+  font-size: 2.1rem;
+  color: #ffe066;
+  background: rgba(0,0,0,0.13);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin: 0 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.skill-title {
+  margin-bottom: 0.7rem;
+  font-size: 1.3rem;
+  color: #fff;
+  text-align: center;
+}
+/* Icono de tecnología estilo planeta */
+.tech-planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+
+.tech-planet-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #ffe08a 0%, #e0b96a 60%, #bfa13a 100%);
+  box-shadow: 0 0 18px 4px #bfa13a44, 0 2px 8px #7a9fbf33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #222;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+}
+.tech-planet-icon::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  width: 18px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  filter: blur(1px);
+}
+.tech-planet-icon:hover {
+  box-shadow: 0 0 32px 10px #7a9fbf99, 0 8px 32px 0 #bfa13a66;
+  background: radial-gradient(circle at 40% 60%, #7a9fbf 0%, #ffe08a 60%, #bfa13a 100%);
+  transform: scale(1.08) rotate(-6deg);
+  color: #fff1e2;
+}
+.tech-planet-label {
+  font-size: 1rem;
+  color: #ffe08a;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 0.2em;
+  text-shadow: 0 1px 4px #222a;
+}
 
 /* Botón planetario para Download CV */
 .planet-btn {
@@ -93,57 +209,6 @@
   box-sizing: border-box;
   font-family: 'Share Tech Mono', monospace;
 }
-body.light-theme {
-  background: #f6f6f6;
-  color: #222;
-}
-
-body.light-theme .space-container {
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-body.light-theme nav {
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
-  border-bottom: 1.5px solid rgba(0, 0, 0, 0.08);
-}
-
-body.light-theme .titulo-personalizado,
-body.light-theme .contenedor-titulo,
-body.light-theme .navbar-menu li {
-  color: #222 !important;
-}
-
-body.light-theme .laura-andrea {
-  color: #222;
-}
-
-body.light-theme .monsalve-span {
-  color: #e0bd71;
-}
-
-body.light-theme .stack-grande {
-  color: #555;
-}
-
-body.light-theme .saturn-planet {
-  background: radial-gradient(circle at 30% 30%, #fffde3 40%, #ffe5a3 60%, #e0b96a 100%);
-}
-
-body.light-theme .saturn-ring {
-  border-color: #bbb;
-}
-
-body.light-theme .saturn-icon {
-  background: #eee;
-  color: #222 !important;
-}
-
-body.light-theme .saturn-icon:hover {
-  background: #ffe066;
-  color: #222 !important;
-}
-
 /* Saturn Widget Styles */
 .saturn-widget {
   display: flex;
@@ -352,6 +417,7 @@ nav {
   width: 100vw;
   min-height: 80vh;
   padding: 2rem;
+  height: 100vh;
 }
 
 .nav-container {
@@ -409,6 +475,7 @@ nav {
   gap: 14rem;
   padding: 6rem;
   justify-content: center;
+  height: 100vh;
 }
 .about-text {
   max-width: 550px;
@@ -423,14 +490,16 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem;
+  padding: 8rem;
   justify-content: center;
   background-color: #f29f5714;
+  height: 100vh;
+
 }
 .project-h2{
   color: whitesmoke;
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .project-list{
   display: flex;
@@ -450,7 +519,7 @@ nav {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .project-h3{
-  color: #7A9FBF;
+  color: #e0bd71;
   font-size: 1.5rem;
   margin: 0.5em 0;
 }
@@ -464,5 +533,23 @@ nav {
   align-items: center;
   padding: 6rem;
   justify-content: center;
-  background-color: #0f0f0f7d;
+  min-height: 100dvh;
+  width: 100%;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
