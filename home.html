@@ -10,6 +10,22 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<script type="module">
+  import { animate, stagger, text } from 'https://cdn.jsdelivr.net/npm/animejs/+esm';
+  
+  const { chars } = text.split('span', {
+    chars: { wrap: true },
+  });
+
+  animate(chars, {
+    y: ['75%', '0%'],
+    duration: 750,
+    ease: 'out(3)',
+    delay: stagger(50),
+    loop: true,
+    alternate: true,
+  });
+</script>
 
 <body>
     <canvas id="star-canvas" style="position:fixed;top:0;left:0;z-index:-10;pointer-events:none;"></canvas>
@@ -34,10 +50,10 @@
             <div class="contenedor-sobremi">
                 <div class="contenedor-titulo">
                     <h1 class="titulo-personalizado">
-                        <span class="iam-col">I am</span>
+                        <span  class="iam-col">I am</span>
                         <span class="laura-andrea">Laura Andrea</span><br />
                         <span class="monsalve-span">Monsalve Velasquez</span><br />
-                        <span class="stack-grande">Full Stack Java | QA automation</span>
+                        <span id="stack-grande" class="stack-grande s">Full Stack Java | QA automation</span>
                     </h1>
                 </div>
                 <div class="contenedor-canvas">
@@ -200,7 +216,11 @@
                 <a href="" target="_blank" class="contact-link">
                     <i class="fab fa-github"></i> GitHub
     </section>
+    <footer>
+        <p>&copy; 2025 Andrea Monsalve. Todos los derechos reservados.</p>
+    </footer>
     <script src="/Js/app.js"></script>
+    <script src="/Js/animacion.js"></script>
 
 </body>
 

@@ -324,9 +324,23 @@ nav {
  flex-direction: row;
  gap: 5rem;
 }
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem 1rem 1rem 1rem;
+  width: 100%;
+  max-width: 20rem;
+  min-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 /* Miniatura para imagen de proyecto */
 .project-thumb {
-  width: 240px;
+  width: 95%;
   height: 240px;
   object-fit: cover;
   border-radius: 12px;
@@ -338,11 +352,11 @@ nav {
 }
 .project-h3{
   color: #e0bd71;
-  font-size: 1.5rem;
-  margin: 0.5em 0;
+  font-size: 1.2rem;
+  
 }
 .project-thumb:hover {
-  transform: scale(1.08) rotate(-2deg);
+  transform: scale(1.08);
   box-shadow: 0 4px 16px #bfa13a55;
 }
 

@@ -11,6 +11,7 @@
   "description": "",
   "type": "module",
   "dependencies": {
-    "@splinetool/runtime": "^1.10.44"
+    "@splinetool/runtime": "^1.10.44",
+    "animejs": "^4.1.2"
   }
 }
