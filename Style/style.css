@@ -1,119 +1,4 @@
-/* Habilidades grid 2x2 */
-.skillsBox{
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  padding:  0 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-  max-width: 50rem;
-}
 
-.skill-card-grid {
-  background: rgba(255,255,255,0.08);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 1.5rem 1rem 1rem 1rem;
-  width: 100%;
-  max-width: 20rem;
-  min-height: 16rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.pyramid-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem 1.2rem;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  margin-top: 0.5rem;
-}
-
-
-.iconCont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.3rem;
-}
-.iconCont p {
-  font-size: 0.9rem;
-  color: var(--azul-claro);
-  margin-top: 0.3rem;
-  margin-bottom: 0.3rem;
-}
-
-.tech-planet-icon {
-  font-size: 2.1rem;
-  color: #ffe066;
-  background: rgba(0,0,0,0.13);
-  border-radius: 50%;
-  padding: 0.5rem;
-  margin: 0 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-}
-
-.skill-title {
-  margin-bottom: 0.7rem;
-  font-size: 1.3rem;
-  color: #fff;
-  text-align: center;
-}
-/* Icono de tecnología estilo planeta */
-.tech-planet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5em;
-  margin: 1em 0;
-}
-
-.tech-planet-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 60% 40%, #ffe08a 0%, #e0b96a 60%, #bfa13a 100%);
-  box-shadow: 0 0 18px 4px #bfa13a44, 0 2px 8px #7a9fbf33;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: #222;
-  position: relative;
-  transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
-}
-.tech-planet-icon::after {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 12px;
-  width: 18px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.18);
-  filter: blur(1px);
-}
-.tech-planet-icon:hover {
-  box-shadow: 0 0 32px 10px #7a9fbf99, 0 8px 32px 0 #bfa13a66;
-  background: radial-gradient(circle at 40% 60%, #7a9fbf 0%, #ffe08a 60%, #bfa13a 100%);
-  transform: scale(1.08) rotate(-6deg);
-  color: #fff1e2;
-}
-.tech-planet-label {
-  font-size: 1rem;
-  color: #ffe08a;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  margin-top: 0.2em;
-  text-shadow: 0 1px 4px #222a;
-}
 
 /* Botón planetario para Download CV */
 .planet-btn {
@@ -195,6 +80,7 @@
   background:
     radial-gradient(circle at 40% 60%, #BF6734 0%, #bfa13a 50%, #ffe08a 100%);
 }
+
 /* Paleta de colores principal */
 :root {
   --azul-oscuro: #010A26;
@@ -209,118 +95,6 @@
   box-sizing: border-box;
   font-family: 'Share Tech Mono', monospace;
 }
-/* Saturn Widget Styles */
-.saturn-widget {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0;
-}
-
-.saturn-orbit {
-  position: relative;
-  width: 320px;
-  height: 320px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.saturn-planet {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  overflow: hidden;
-  background:
-    /* bandas anchas horizontales y ligeramente diagonales */
-    linear-gradient(-12deg,
-      #bfa13a 0%,
-      #e0b96a 25%,
-      #f2c14d 45%,
-      #ffe08a 60%,
-      #e0b96a 80%,
-      #bfa13a 100%
-    ),
-    radial-gradient(circle at 40% 35%, #fffbe3 0%, transparent 60%),
-    radial-gradient(circle at 60% 70%, #fffbe3 0%, transparent 70%),
-    radial-gradient(circle at 50% 100%, #bfa13a 0%, transparent 80%);
-  box-shadow: 0 0 40px 10px #bfa13a44, 0 8px 32px 0 #bfa13a33;
-  animation: saturn-spin 12s linear infinite;
-}
-
-
-.saturn-planet::after {
-  content: "";
-  position: absolute;
-  left: 18px;
-  top: 85px;
-  width: 170px;
-  height: 28px;
-  border-radius: 50%;
-  opacity: 0.45;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.saturn-ring {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 260px;
-  height: 90px;
-  border: 7px solid #bdbdbd;
-  border-radius: 50% / 50%;
-  transform: translate(-50%, -50%) rotate(-20deg);
-  z-index: 1;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-}
-
-.saturn-icon {
-  position: absolute;
-  color: #fff !important;
-  font-size: 1.2rem;
-  background: #222c;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 8px #0004;
-  pointer-events: auto;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-}
-
-.saturn-icon.github {
-  left: 0%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(-20deg);
-  background: #222c;
-}
-
-.saturn-icon.linkedin {
-  right: 0%;
-  top: 50%;
-  transform: translate(50%, -50%) rotate(-20deg);
-  background: #222c;
-}
-
-.saturn-icon:hover {
-  background: #fff;
-  color: #222 !important;
-  transform: scale(1.15);
-  z-index: 3;
-}
-
 /* Estilos personalizados para el título principal */
 .titulo-personalizado {
   display: flex;
@@ -380,7 +154,7 @@ body {
 body::before {
   display: none;
 }
-
+/*NAVBAR*/
 nav {
   position: fixed;
   top: 0;
@@ -403,10 +177,10 @@ nav {
 }
 
 .nav-title h2 {
-  color: #7A9FBF;
+  color: #fff;
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 .space-container {
@@ -422,8 +196,10 @@ nav {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 20rem;
+  
 }
 
 .navbar-menu {
@@ -454,6 +230,7 @@ nav {
   border-radius: 50px;
 }
 
+/*SOBRE MI */
 .contenedor-sobremi {
   display: flex;
   justify-content: space-between;
@@ -465,9 +242,49 @@ nav {
   padding: 20px;
   margin-left: 0;
   color: #eceef4;
-}
+  position: absolute;
+  left: 120px;
 
-/* Estilo para sobre mi */
+}
+.contenedor-canvas{
+  position: absolute;
+  right: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imagen-planeta {
+  width: 400px;
+  transition: width 0.3s ease;
+}
+.btn-sobremi {
+  background-color: #1300253c;
+  color: #eceef4;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid rgba(0, 255, 255, 0); /* inicia invisible */
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  animation: borderFade 1s infinite alternate;
+}
+@keyframes borderFade {
+    0%   { border-color: rgba(0, 255, 255, 0); }   /* invisible */
+    100% { border-color: #7A9FBF; }   /* totalmente visible */
+  }
+.btn-sobremi:hover {
+  color: #000;
+  background-color: #7A9FBF;
+ }
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.icon-sobremi {
+  font-size: 1.5rem;
+  color: #eceef4;
+}
 .about {
   display: flex;
   flex-direction: row;
@@ -486,13 +303,14 @@ nav {
   margin-bottom: 1rem;
   color: whitesmoke;
 }
+/* PROJECTOS */
 .projects{
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 8rem;
   justify-content: center;
-  background-color: #f29f5714;
+  background-color: #57acf214;
   height: 100vh;
 
 }
@@ -527,6 +345,8 @@ nav {
   transform: scale(1.08) rotate(-2deg);
   box-shadow: 0 4px 16px #bfa13a55;
 }
+
+/* HABILIDADES */
 .skills{
   display: flex;
   flex-direction: column;
@@ -543,6 +363,114 @@ nav {
   justify-content: center;
   gap: 1.5rem;
   width: 100%;
+}
+.skillsBox{
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding:  0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  max-width: 50rem;
+}
+
+.skill-card-grid {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem 1rem 1rem 1rem;
+  width: 100%;
+  max-width: 20rem;
+  min-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pyramid-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin-top: 0.5rem;
+}
+.iconCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.3rem;
+}
+.iconCont p {
+  font-size: 0.9rem;
+  color: var(--azul-claro);
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.tech-planet-icon {
+  font-size: 2.1rem;
+  color: #ffe066;
+  background: rgba(0,0,0,0.13);
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin: 0 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+.skill-title {
+  margin-bottom: 0.7rem;
+  font-size: 1.3rem;
+  color: #fff;
+  text-align: center;
+}
+.tech-planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+.tech-planet-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #ffe08a 0%, #e0b96a 60%, #bfa13a 100%);
+  box-shadow: 0 0 18px 4px #bfa13a44, 0 2px 8px #7a9fbf33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #222;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+}
+.tech-planet-icon::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  width: 18px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  filter: blur(1px);
+}
+.tech-planet-icon:hover {
+  box-shadow: 0 0 32px 10px #7a9fbf99, 0 8px 32px 0 #bfa13a66;
+  background: radial-gradient(circle at 40% 60%, #7a9fbf 0%, #ffe08a 60%, #bfa13a 100%);
+  transform: scale(1.08) rotate(-6deg);
+  color: #fff1e2;
+}
+.tech-planet-label {
+  font-size: 1rem;
+  color: #ffe08a;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 0.2em;
+  text-shadow: 0 1px 4px #222a;
 }
 .contact{
   display: flex;

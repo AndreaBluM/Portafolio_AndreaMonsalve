@@ -1,20 +1,4 @@
-// Cambiar tema claro/oscuro
-window.addEventListener('DOMContentLoaded', function() {
-  const btn = document.getElementById('theme-toggle');
-  const icon = document.getElementById('theme-icon');
-  btn && btn.addEventListener('click', function() {
-    const isDark = document.body.classList.toggle('light-theme');
-    if (isDark) {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-      icon.style.color = '#f7c873';
-    } else {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-      icon.style.color = '#ffe066';
-    }
-  });
-});
+
 // Fondo de estrellas animadas
 function createStars() {
   const canvas = document.getElementById('star-canvas');
