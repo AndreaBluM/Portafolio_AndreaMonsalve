@@ -11,20 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <script type="module">
-  import { animate, stagger, text } from 'https://cdn.jsdelivr.net/npm/animejs/+esm';
-  
-  const { chars } = text.split('span', {
-    chars: { wrap: true },
-  });
+    import { animate, stagger, text } from 'https://cdn.jsdelivr.net/npm/animejs/+esm';
 
-  animate(chars, {
-    y: ['75%', '0%'],
-    duration: 750,
-    ease: 'out(3)',
-    delay: stagger(50),
-    loop: true,
-    alternate: true,
-  });
+    const { chars } = text.split('span', {
+        chars: { wrap: true },
+    });
+
+    animate(chars, {
+        y: ['75%', '0%'],
+        duration: 750,
+        ease: 'out(3)',
+        delay: stagger(50),
+        loop: true,
+        alternate: true,
+    });
 </script>
 
 <body>
@@ -50,7 +50,7 @@
             <div class="contenedor-sobremi">
                 <div class="contenedor-titulo">
                     <h1 class="titulo-personalizado">
-                        <span  class="iam-col">I am</span>
+                        <span class="iam-col">I am</span>
                         <span class="laura-andrea">Laura Andrea</span><br />
                         <span class="monsalve-span">Monsalve Velasquez</span><br />
                         <span id="stack-grande" class="stack-grande s">Full Stack Java | QA automation</span>
@@ -94,37 +94,26 @@
                 <button class="planet-btn">Descargar CV</button>
             </div>
         </section>
+
         <section id="projects" class="projects">
             <h2 class="project-h2">Mis proyectos</h2>
-            <div class="project-list">
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <h3 class="project-h3">Parlario Diccionario</h3>
-                    <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="" class="project-thumb">
-                    <p>Descripción breve del proyecto.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <h3 class="project-h3">ToDo JavaScript</h3>
-                    <img src="img/Captura de pantalla 2025-08-07 122534.png" alt="" class="project-thumb">
-
-                    <p>Descripción breve del proyecto.</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-img"></div>
-                    <h3 class="project-h3">Primera pagina</h3>
-                    <img src="img/Captura de pantalla 2025-08-07 121218.png" alt="" class="project-thumb">
-
-                    <p>Descripción breve del proyecto.</p>
+            <br>
+            <div class="project-card">
+                <div class="project-info">
+                <h2 class="project-title">Example Project</h2>
+                <p class=" cuadro  project-description">
+                    A web app for visualizing personalized Spotify data. View your top artists,
+                    top tracks, recently played tracks, and detailed audio information about each track.
+                </p>
+            </div>
+            <div class="cuadro  project-image">
+                <div class="image-placeholder">
+                    <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
                 </div>
             </div>
-
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
             </div>
+            
+
         </section>
         <section id="skills" class="skills">
             <h2 class="project-h2">Mis habilidades</h2>

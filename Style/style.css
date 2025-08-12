@@ -1,5 +1,4 @@
 
-
 /* Botón planetario para Download CV */
 .planet-btn {
   background: linear-gradient(90deg, #bfa13a 0%, #ffe08a 100%);
@@ -259,9 +258,9 @@ nav {
   transition: width 0.3s ease;
 }
 .btn-sobremi {
-  background-color: #1300253c;
+  background: linear-gradient(90deg, #0d0d0d47 0%, #7a9fbf22 100%);
   color: #eceef4;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   border: 2px solid rgba(0, 255, 255, 0); /* inicia invisible */
   border-radius: 50px;
   text-decoration: none;
@@ -270,7 +269,7 @@ nav {
 }
 @keyframes borderFade {
     0%   { border-color: rgba(0, 255, 255, 0); }   /* invisible */
-    100% { border-color: #7A9FBF; }   /* totalmente visible */
+    100% { border-color: #7a9fbf5d; }   /* totalmente visible */
   }
 .btn-sobremi:hover {
   color: #000;
@@ -310,7 +309,7 @@ nav {
   align-items: center;
   padding: 8rem;
   justify-content: center;
-  background-color: #57acf214;
+  background-color: #5472e914;
   height: 100vh;
 
 }
@@ -319,46 +318,79 @@ nav {
   font-size: 2rem;
   margin-bottom: 3rem;
 }
-.project-list{
-  display: flex;
- flex-direction: row;
- gap: 5rem;
-}
 .project-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  padding: 1.5rem 1rem 1rem 1rem;
-  width: 100%;
-  max-width: 20rem;
-  min-height: 16rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 32px 0 rgba(10, 30, 60, 0.042), 0 1.5px 24px 0 #7a9fbf07;
+  border-radius: 50px;
 }
 
-/* Miniatura para imagen de proyecto */
-.project-thumb {
-  width: 95%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px #0003;
-  margin: 0.5em 0;
-  border: 2px solid #bfa13a33;
-  background: #222;
-  transition: transform 0.2s, box-shadow 0.2s;
+.project-info {
+  max-width: 500px;
 }
-.project-h3{
-  color: #e0bd71;
-  font-size: 1.2rem;
+
+.project-tag {
+  color: #c084fc; /* Lila claro */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--azul-claro);
+}
+
+.project-description {
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 600px;
+  color: #fff1e2;
+  background: linear-gradient(90deg, #0d0d0d47 0%, #7a9fbf22 100%);
+  
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  
+  border-radius: 18px;
+  background-blend-mode: lighten;
+  padding: 2rem;
+ }
+
+.project-image {
+  flex: 1;
+  min-width: 300px;
   
 }
-.project-thumb:hover {
-  transform: scale(1.08);
-  box-shadow: 0 4px 16px #bfa13a55;
+.project-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
+.image-placeholder {
+  background: white;
+  color: #888;
+  height: 350px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.image-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
 
 /* HABILIDADES */
 .skills{
