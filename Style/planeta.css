@@ -1,63 +1,173 @@
+/* ===== Helpers fluidos (colócalo al final de tu CSS) ===== */
+img, canvas, video, svg { max-width: 100%; height: auto; }
 
-.saturn-widget {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
+/* Evitar desbordes por 100vw en móviles */
+nav { width: 100%; }
+
+/* Tablet y abajo */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-container{
+    gap: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .navbar-menu{
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  /* Hero / wrapper principal que tenía alturas grandes */
+  .space-container{
+    height: auto;
+    min-height: 70vh;
+    padding: 6rem 1.25rem 2rem; /* deja aire bajo el nav fijo */
+    width: 100%; /* en vez de 100vw */
+  }
+
+  /* Sobre mí: pasar a layout en columna y quitar absolutos */
+  .contenedor-sobremi,
+  .about{
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.25rem;
+    height: auto;
+  }
+  .contenedor-titulo,
+  .contenedor-canvas{
+    position: static;
+    left: auto; right: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Planeta / foto */
+  .planet-image-container{
+    width: min(70vw, 260px);
+    height: min(70vw, 260px);
+  }
+  .planet-image{
+    width: 100%;
+    height: 100%;
+  }
+  .imagen-planeta{
+    width: min(80vw, 320px);
+  }
+
+  /* Tipografías más contenidas */
+  .iam-col{ font-size: 1.25rem; }
+  .laura-andrea{ font-size: 2.4rem; }
+  .monsalve-span{ font-size: 1.4rem; }
+  .stack-grande{ font-size: 1.25rem; }
+
+  /* Proyectos: columna y anchos fluidos */
+  .projects{ padding: 3.5rem 1.25rem; }
+  .project-card,
+  .project-card-R{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  .project-info{ max-width: 100%; }
+  .project-description{
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .project-image{ min-width: 0; width: 100%; }
+  .image-placeholder{
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+  }
+
+  /* Skills */
+  .skills{ padding: 3.5rem 1.25rem; min-height: auto; }
+  .skills-grid{
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  .skill-card-grid{
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  /* Contacto */
+  .contact{
+    padding: 3.5rem 1.25rem;
+    height: auto;
+  }
+  .contact-text{
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+  .form-group{ width: 100%; }
+  .form-input{ width: 100%; }
+
+  /* Footer */
+  footer{
+    font-size: 0.9rem;
+    padding: 0.6rem 0.4rem;
+  }
 }
 
-.saturn-planet {
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle at 40% 40%, #f5c273, #c38b4e);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 50px #f5c273;
+/* iPhone 14 / teléfonos (≤ 430px) */
+@media (max-width: 430px) {
+  /* Títulos */
+  .titulo-personalizado{ gap: 0.25em; }
+  .iam-col{ font-size: 1.1rem; }
+  .laura-andrea{ font-size: 2rem; line-height: 1.05; }
+  .monsalve-span{ font-size: 1.2rem; }
+  .stack-grande{ font-size: 1.1rem; }
+
+  /* Navbar compacto */
+  .navbar-menu{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  /* Más ajustes de “Sobre mí” */
+  .contenedor-sobremi,
+  .about{
+    gap: 1.25rem;
+    padding: 2rem 1rem;
+  }
+  .planet-image-container{
+    width: min(72vw, 220px);
+    height: min(72vw, 220px);
+  }
+
+  /* Botones */
+  .btn-sobremi,
+  .planet-btn{
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Proyectos */
+  .project-title{ font-size: 1.4rem; }
+  .project-description{ font-size: 0.9rem; }
+
+  /* Grilla skills más densa en cel */
+  .skills-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  /* Formulario */
+  .contact-links{
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
 }
 
-.saturn-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 250px;
-  height: 40px;
-  border: 2px solid #aaa;
-  transform: translate(-50%, -50%) rotate(15deg);
-  border-radius: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.ring-icon {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 10px;
-  background: rgba(100, 100, 100, 0.3);
-  border-radius: 20px;
-  font-family: sans-serif;
-  font-size: 14px;
-  transition: transform 0.3s;
-}
-
-.ring-icon:hover {
-  transform: scale(1.2);
-}
-
-.social-icon {
-  color: white;
-  font-size: 1.5rem;
-  margin-top: 12px;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-}
-
-.social-icon:hover {
-  transform: scale(1.3);
-  text-shadow: 0 0 20px rgba(224, 189, 113, 0.8);
+/* Correcciones de valores fijos originales que generaban overflow */
+@media (max-width: 992px) {
+  .nav-container{ gap: 1.25rem; }
+  .project-description{ width: 100%; }
+  .image-placeholder{ width: 100%; }
+  .contact-text{ width: 100%; }
 }

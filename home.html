@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Monsalve | Developer</title>
     <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/planeta.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -63,10 +64,10 @@
                     </div>
                     <div class="social-icons">
                         <a href="https://github.com/AndreaBluM" target="_blank"><i
-                                class="icon-sobremi fab fa-github"></i></a>
+                                class="contact-link fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/andrea-mondev/" target="_blank"><i
-                                class="icon-sobremi fab fa-linkedin"></i></a>
-                        <a href="mailto:lauralme96@example.com"><i class="icon-sobremi fas fa-envelope"></i></a>
+                                class="contact-link fab fa-linkedin"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lauralme96@gmail.com&su=Consulta%20Portafolio&body=Hola,%20quiero%20más%20información%20sobre%20tu%20trabajo"><i class="contact-link fas fa-envelope"></i></a>
 
                     </div>
                 </div>
@@ -91,7 +92,7 @@
                     experiencia desarrollando aplicaciones con tecnologías como Java (Spring Boot), JavaScript, React,
                     Python y SQL, así como en testing manual y automatizado con herramientas como Cypress, Selenium,
                     Postman y Screenplay.</p>
-                <button class="planet-btn">Descargar CV</button>
+                <button id="botonCV" class="planet-btn">Descargar CV</button>
             </div>
         </section>
 
@@ -100,16 +101,63 @@
             <br>
             <div class="project-card">
                 <div class="project-info">
-                <h2 class="project-title">Example Project</h2>
-                <p class=" cuadro  project-description">
+                    <p class="project-tag">Web App</p>
+                <h2 class="project-title">Parlario</h2>
+                <p class="project-description">
                     A web app for visualizing personalized Spotify data. View your top artists,
                     top tracks, recently played tracks, and detailed audio information about each track.
                 </p>
             </div>
-            <div class="cuadro  project-image">
+            <div class="project-image">
                 <div class="image-placeholder">
                     <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
                 </div>
+            </div>
+            </div>
+
+            <div class="project-card r"> 
+            <div class="project-image">
+                <div class="image-placeholder">
+                    <img src="img/Captura de pantalla 2025-08-07 122534.png" alt="">
+                </div>
+            </div>
+            <div class="project-info">
+                <p class="project-tag">Web App</p>
+                <h2 class="project-title">To Do list</h2>
+                <p class="project-description">
+                    A web app for visualizing personalized Spotify data. View your top artists,
+                    top tracks, recently played tracks, and detailed audio information about each track.
+                </p>
+            </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <p class="project-tag">Web App</p>
+                <h2 class="project-title">Poke API</h2>
+                <p class="project-description">
+                    A web app for visualizing personalized Spotify data. View your top artists,
+                    top tracks, recently played tracks, and detailed audio information about each track.
+                </p>
+            </div>
+            <div class="project-image">
+                <div class="image-placeholder">
+                    <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
+                </div>
+            </div>
+            </div>
+            <div class="project-card"> 
+            <div class="project-image">
+                <div class="image-placeholder">
+                    <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
+                </div>
+            </div>
+            <div class="project-info">
+                <p class="project-tag">Web App</p>
+                <h2 class="project-title">To Do list</h2>
+                <p class="project-description">
+                    A web app for visualizing personalized Spotify data. View your top artists,
+                    top tracks, recently played tracks, and detailed audio information about each track.
+                </p>
             </div>
             </div>
             
@@ -199,17 +247,38 @@
     <section>
         <div class="contact" id="contact">
             <h2 class="project-h2">Contactame</h2>
-            <p>Si deseas contactarme, puedes hacerlo a través de mis redes sociales o enviando un correo electrónico.
-            </p>
-            <div class="contact-links">
-                <a href="" target="_blank" class="contact-link">
-                    <i class="fab fa-github"></i> GitHub
+            <div class="contact-text">
+                <form action="">
+                    <div class="form-group">
+                        <input class="form-input" type="text" placeholder="Tu nombre" required>
+                    <input class="form-input" type="email" placeholder="Tu email" required>
+                    <textarea class="form-input" placeholder="Tu mensaje" required></textarea>
+                    <button type="submit" class="planet-btn">Enviar</button>
+                    </div>
+                
+                </form>
+                
+                <div class="contact-links">
+                <a href="https://github.com/AndreaBluM" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i> 
+                </a>
+                <a href="https://www.linkedin.com/in/andrea-mondev/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i> 
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lauralme96@gmail.com&su=Consulta%20Portafolio&body=Hola,%20quiero%20más%20información%20sobre%20tu%20trabajo" class="contact-link">
+                    <i class="fas fa-envelope"></i> 
+                </a>
+                </div>
+            </div>
+            
+            
     </section>
     <footer>
         <p>&copy; 2025 Andrea Monsalve. Todos los derechos reservados.</p>
     </footer>
+    
+    <script src="/Js/app1.js"></script>
     <script src="/Js/app.js"></script>
-    <script src="/Js/animacion.js"></script>
 
 </body>
 
