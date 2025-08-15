@@ -1,31 +1,43 @@
-/* ===== Helpers fluidos (colócalo al final de tu CSS) ===== */
+
 img, canvas, video, svg { max-width: 100%; height: auto; }
 
-/* Evitar desbordes por 100vw en móviles */
 nav { width: 100%; }
 
-/* Tablet y abajo */
-@media (max-width: 768px) {
-  /* Navbar */
-  .nav-container{
-    gap: 2rem;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .navbar-menu{
-    flex-wrap: wrap;
-    gap: 0.75rem 1rem;
+@media (max-width: 1250px) {
+.space-container { width: 100%; }
+.space-container{
+    height: auto;
+    min-height: 70vh;
+    padding: 6rem 1.25rem 2rem;
+    width: 100%; 
   }
 
-  /* Hero / wrapper principal que tenía alturas grandes */
+  /* Sobre mi*/
+  .contenedor-sobremi,
+  .about{
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.25rem;
+    height: auto;
+  }
+  .contenedor-titulo,
+  .contenedor-canvas{
+    position: static;
+    left: auto; right: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+/* Tablet y abajo */
+@media (max-width: 768px) {
+  
   .space-container{
     height: auto;
     min-height: 70vh;
-    padding: 6rem 1.25rem 2rem; /* deja aire bajo el nav fijo */
-    width: 100%; /* en vez de 100vw */
+    padding: 6rem 1.25rem 2rem; 
+    width: 100%; 
   }
 
-  /* Sobre mí: pasar a layout en columna y quitar absolutos */
   .contenedor-sobremi,
   .about{
     flex-direction: column;
@@ -41,7 +53,7 @@ nav { width: 100%; }
     text-align: center;
   }
 
-  /* Planeta / foto */
+  /* Planeta foto */
   .planet-image-container{
     width: min(70vw, 260px);
     height: min(70vw, 260px);
@@ -53,14 +65,12 @@ nav { width: 100%; }
   .imagen-planeta{
     width: min(80vw, 320px);
   }
-
-  /* Tipografías más contenidas */
   .iam-col{ font-size: 1.25rem; }
   .laura-andrea{ font-size: 2.4rem; }
   .monsalve-span{ font-size: 1.4rem; }
   .stack-grande{ font-size: 1.25rem; }
 
-  /* Proyectos: columna y anchos fluidos */
+  /* Proyectos*/
   .projects{ padding: 3.5rem 1.25rem; }
   .project-card,
   .project-card-R{
@@ -81,6 +91,10 @@ nav { width: 100%; }
     width: 100%;
     height: auto;
     min-height: 200px;
+  }
+  .image-placeholder{
+    height: 180px;
+  width: 280px;
   }
 
   /* Skills */
@@ -113,8 +127,8 @@ nav { width: 100%; }
   }
 }
 
-/* iPhone 14 / teléfonos (≤ 430px) */
 @media (max-width: 430px) {
+  
   /* Títulos */
   .titulo-personalizado{ gap: 0.25em; }
   .iam-col{ font-size: 1.1rem; }
@@ -129,7 +143,6 @@ nav { width: 100%; }
     gap: 0.6rem;
   }
 
-  /* Más ajustes de “Sobre mí” */
   .contenedor-sobremi,
   .about{
     gap: 1.25rem;
@@ -151,7 +164,7 @@ nav { width: 100%; }
   .project-title{ font-size: 1.4rem; }
   .project-description{ font-size: 0.9rem; }
 
-  /* Grilla skills más densa en cel */
+  /* Grilla skills */
   .skills-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;

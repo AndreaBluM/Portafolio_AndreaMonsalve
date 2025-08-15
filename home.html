@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Monsalve | Developer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="Style/style.css">
-    <link rel="stylesheet" href="Style/planeta.css">
+    <link rel="stylesheet" href="Style/responsive.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,18 +16,20 @@
 <script type="module">
     import { animate, stagger, text } from 'https://cdn.jsdelivr.net/npm/animejs/+esm';
 
-    const { chars } = text.split('span', {
-        chars: { wrap: true },
-    });
+const { words } = text.split('.s', {
+  words: { wrap: 'clip' },
+})
 
-    animate(chars, {
-        y: ['75%', '0%'],
-        duration: 750,
-        ease: 'out(3)',
-        delay: stagger(50),
-        loop: true,
-        alternate: true,
-    });
+animate(words, {
+  y: [
+    { to: ['100%', '0%'] },
+    { to: '-100%', delay: 1750, ease: 'in(3)' }
+  ],
+  duration: 750,
+  ease: 'out(3)',
+  delay: stagger(100),
+  loop: true,
+});
 </script>
 
 <body>
@@ -42,6 +46,9 @@
                 <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#contact">Contactame</a></li>
             </ul>
+            <span class="menu-toggle" id="menu-toggle">
+                  <i class="bi bi-list"></i>
+            </span>
         </div>
     </nav>
 
@@ -53,8 +60,8 @@
                     <h1 class="titulo-personalizado">
                         <span class="iam-col">I am</span>
                         <span class="laura-andrea">Laura Andrea</span><br />
-                        <span class="monsalve-span">Monsalve Velasquez</span><br />
-                        <span id="stack-grande" class="stack-grande s">Full Stack Java | QA automation</span>
+                        <span class="monsalve-span s">Monsalve Velasquez</span><br />
+                        <span id="stack-grande" class="stack-grande ">Full Stack Java | QA automation</span>
                     </h1>
                 </div>
                 <div class="contenedor-canvas">
@@ -111,16 +118,15 @@
             <div class="project-image">
                 <div class="image-placeholder">
                     <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
+                    <div class="image-overlay">
+                        <a href="https://github.com/usuario/repositorio" target="_blank" class="btn-overlay">Respositorio</a>
+                        <a href="https://usuario.netlify.app" target="_blank" class="btn-overlay">Demo</a>
+                    </div>
                 </div>
             </div>
-            </div>
+        </div>
 
-            <div class="project-card r"> 
-            <div class="project-image">
-                <div class="image-placeholder">
-                    <img src="img/Captura de pantalla 2025-08-07 122534.png" alt="">
-                </div>
-            </div>
+            <div class="project-card reverse"> 
             <div class="project-info">
                 <p class="project-tag">Web App</p>
                 <h2 class="project-title">To Do list</h2>
@@ -128,6 +134,15 @@
                     A web app for visualizing personalized Spotify data. View your top artists,
                     top tracks, recently played tracks, and detailed audio information about each track.
                 </p>
+            </div>
+            <div class="project-image">
+                <div class="image-placeholder">
+                    <img src="img/Captura de pantalla 2025-08-07 122534.png" alt="">
+                    <div class="image-overlay">
+                        <a href="https://github.com/usuario/repositorio" target="_blank" class="btn-overlay">Respositorio</a>
+                        <a href="https://usuario.netlify.app" target="_blank" class="btn-overlay">Demo</a>
+                    </div>
+                </div>
             </div>
             </div>
             <div class="project-card">
@@ -142,15 +157,14 @@
             <div class="project-image">
                 <div class="image-placeholder">
                     <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
+                    <div class="image-overlay">
+                        <a href="https://github.com/usuario/repositorio" target="_blank" class="btn-overlay">Respositorio</a>
+                        <a href="https://usuario.netlify.app" target="_blank" class="btn-overlay">Demo</a>
+                    </div>
                 </div>
             </div>
             </div>
-            <div class="project-card"> 
-            <div class="project-image">
-                <div class="image-placeholder">
-                    <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
-                </div>
-            </div>
+            <div class="project-card reverse"> 
             <div class="project-info">
                 <p class="project-tag">Web App</p>
                 <h2 class="project-title">To Do list</h2>
@@ -158,6 +172,15 @@
                     A web app for visualizing personalized Spotify data. View your top artists,
                     top tracks, recently played tracks, and detailed audio information about each track.
                 </p>
+            </div>
+            <div class="project-image">
+                <div class="image-placeholder">
+                    <img src="img/Captura de pantalla 2025-08-07 112501.png" alt="">
+                    <div class="image-overlay">
+                        <a href="https://github.com/usuario/repositorio" target="_blank" class="btn-overlay">Respositorio</a>
+                        <a href="https://usuario.netlify.app" target="_blank" class="btn-overlay">Demo</a>
+                    </div>
+                </div>
             </div>
             </div>
             
