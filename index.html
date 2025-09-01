@@ -39,7 +39,7 @@ animate(words, {
             <div class="nav-title">
                 <h2>Andrea</h2>
             </div>
-            <ul class="navbar-menu">
+            <ul class="navbar-menu" id="navbar-menu">
                 <li> <a href="home.html">Inicio</a></li>
                 <li><a href="#about">Acerca de mi</a></li>
                 <li><a href="#projects">Proyectos</a></li>
@@ -111,8 +111,7 @@ animate(words, {
                     <p class="project-tag">Web App</p>
                 <h2 class="project-title">Parlario</h2>
                 <p class="project-description">
-                    A web app for visualizing personalized Spotify data. View your top artists,
-                    top tracks, recently played tracks, and detailed audio information about each track.
+                    Pagina web realizada con HTML, CSS y JavaScript. Es un diccionario bilingue dirijido a personas que quieren aprender jerga paisa.
                 </p>
             </div>
             <div class="project-image">
@@ -131,15 +130,14 @@ animate(words, {
                 <p class="project-tag">Web App</p>
                 <h2 class="project-title">To Do list</h2>
                 <p class="project-description">
-                    A web app for visualizing personalized Spotify data. View your top artists,
-                    top tracks, recently played tracks, and detailed audio information about each track.
+                    Pagina web realizada con HTML, CSS, JavaScript y Bootstrap. Permite a los usuarios crear, editar y eliminar tareas de una lista de pendientes.
                 </p>
             </div>
             <div class="project-image">
                 <div class="image-placeholder">
                     <img src="img/Captura de pantalla 2025-08-07 122534.png" alt="">
                     <div class="image-overlay">
-                        <a href="https://github.com/usuario/repositorio" target="_blank" class="btn-overlay">Respositorio</a>
+                        <a href="https://github.com/AndreaBluM/ToDo-Boostrap" target="_blank" class="btn-overlay">Respositorio</a>
                         <a href="https://usuario.netlify.app" target="_blank" class="btn-overlay">Demo</a>
                     </div>
                 </div>
@@ -272,13 +270,13 @@ animate(words, {
             <h2 class="project-h2">Contactame</h2>
             <div class="contact-text">
                 <form action="">
+                <form action="https://formspree.io/f/xkgvgdaa" method="POST">
                     <div class="form-group">
-                        <input class="form-input" type="text" placeholder="Tu nombre" required>
-                    <input class="form-input" type="email" placeholder="Tu email" required>
-                    <textarea class="form-input" placeholder="Tu mensaje" required></textarea>
-                    <button type="submit" class="planet-btn">Enviar</button>
+                        <input class="form-input" type="text" name="name" placeholder="Tu nombre" required>
+                        <input class="form-input" type="email" name="email" placeholder="Tu email" required>
+                        <textarea class="form-input" name="message" placeholder="Tu mensaje" required></textarea>
+                        <button type="submit" class="planet-btn">Enviar</button>
                     </div>
-                
                 </form>
                 
                 <div class="contact-links">
@@ -300,8 +298,8 @@ animate(words, {
         <p>&copy; 2025 Andrea Monsalve. Todos los derechos reservados.</p>
     </footer>
     
-    <script src="/Js/app1.js"></script>
-    <script src="/Js/app.js"></script>
+    <script src="Js/app.js"></script>
+    <script src="Js/app1.js"></script>
 
 </body>
 
