@@ -6,6 +6,15 @@ function createStars() {
 
   let stars = [];
 
+  function getThemeColors() {
+    const root = document.documentElement;
+    const style = getComputedStyle(root);
+    return {
+      starColor: getComputedStyle(root).getPropertyValue('--star-color').trim() || '#fff',
+      backgroundColor: getComputedStyle(root).getPropertyValue('--star-bg').trim() || '#0D0D0D'
+    };
+  }
+
   function generateStars() {
     const numStars = Math.floor(window.innerWidth * window.innerHeight / 1200);
     stars = [];
@@ -28,9 +37,11 @@ function createStars() {
   }
 
   function draw() {
-    ctx.fillStyle = '#0D0D0D';
+    const colors = getThemeColors();
+    
+    ctx.fillStyle = colors.backgroundColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = colors.starColor;
 
     for (let s of stars) {
       s.alpha += s.alphaChange;

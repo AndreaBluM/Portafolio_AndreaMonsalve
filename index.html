@@ -35,9 +35,13 @@ animate(words, {
 <body>
     <canvas id="star-canvas" style="position:fixed;top:0;left:0;z-index:-10;pointer-events:none;"></canvas>
     <nav>
+        <div class="scroll-progress"></div>
         <div class="nav-container">
             <div class="nav-title">
                 <h2>Andrea</h2>
+                <button id="theme-toggle" class="theme-toggle-btn" title="Cambiar tema">
+                    <i class="bi bi-sun-fill" id="theme-icon"></i>
+                </button>
             </div>
             <ul class="navbar-menu" id="navbar-menu">
                 <li> <a href="index.html">Inicio</a></li>
@@ -54,17 +58,26 @@ animate(words, {
 
 
     <section class="space-container">
+        <div class="hero-background-elements">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+            <div class="floating-element element-4"></div>
+        </div>
         <div class="stars" id="stars">
             <div class="contenedor-sobremi">
-                <div class="contenedor-titulo">
+                <div class="contenedor-titulo animate-on-scroll">
                     <h1 class="titulo-personalizado">
-                        <span class="iam-col">I am</span>
-                        <span class="laura-andrea">Laura Andrea</span><br />
-                        <span class="monsalve-span s">Monsalve Velasquez</span><br />
-                        <span id="stack-grande" class="stack-grande ">Full Stack Java | QA automation</span>
+                        <span class="iam-col stagger-1">I am</span>
+                        <span class="laura-andrea stagger-2">Laura Andrea</span><br />
+                        <span class="monsalve-span">Monsalve Velasquez</span><br />
+                        <span id="stack-grande" class="stack-grande stagger-4">
+                            <span id="typing-text">Full Stack Java | QA automation</span>
+                            <span class="typing-cursor">|</span>
+                        </span>
                     </h1>
                 </div>
-                <div class="contenedor-canvas">
+                <div class="contenedor-canvas animate-on-scroll">
                     <img class="imagen-planeta" src="img/Planet ring .png" alt="">
                     <div class="sobre-mi-boton">
                         <a class="btn-sobremi" href="#about">Acerca de mi</a>
@@ -75,7 +88,6 @@ animate(words, {
                         <a href="https://www.linkedin.com/in/andrea-mondev/" target="_blank"><i
                                 class="contact-link fab fa-linkedin"></i></a>
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lauralme96@gmail.com&su=Consulta%20Portafolio&body=Hola,%20quiero%20más%20información%20sobre%20tu%20trabajo"><i class="contact-link fas fa-envelope"></i></a>
-
                     </div>
                 </div>
             </div>
@@ -86,13 +98,13 @@ animate(words, {
 
     <main>
         <section id="about" class="about">
-            <div class="profile-pic">
+            <div class="profile-pic animate-on-scroll">
                 <div class="planet-image-container">
                     <img src="img/WhatsApp Image 2025-05-27 at 3.21.12 PM.jpeg" alt="Foto de perfil"
                         class="planet-image">
                 </div>
             </div>
-            <div class="about-text">
+            <div class="about-text animate-on-scroll">
                 <h2>Acerca de mi</h2>
                 <p>Soy Desarrolladora Full Stack Java, también cuento con conocimientos en QA Automation, egresada de
                     Digital House como Professional Developer y con formación adicional en Globant y Generation. Tengo
@@ -103,10 +115,32 @@ animate(words, {
             </div>
         </section>
 
+        <!-- Nueva sección de estadísticas -->
+        <section id="stats" class="stats-section">
+            <div class="stats-container animate-on-scroll">
+                <div class="stat-card animate-on-scroll stagger-1">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Proyectos Completados</div>
+                </div>
+                <div class="stat-card animate-on-scroll stagger-2">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-card animate-on-scroll stagger-3">
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">Tecnologías Dominadas</div>
+                </div>
+                <div class="stat-card animate-on-scroll stagger-4">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Dedicación</div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects">
-            <h2 class="project-h2">Mis proyectos</h2>
+            <h2 class="project-h2 animate-on-scroll">Mis proyectos</h2>
             <br>
-            <div class="project-card">
+            <div class="project-card animate-on-scroll">
                 <div class="project-info">
                     <p class="project-tag">Web App</p>
                 <h2 class="project-title">Parlario</h2>
@@ -125,7 +159,7 @@ animate(words, {
             </div>
         </div>
 
-            <div class="project-card reverse"> 
+            <div class="project-card reverse animate-on-scroll"> 
             <div class="project-info">
                 <p class="project-tag">Web App</p>
                 <h2 class="project-title">Nucleo Tech</h2>
@@ -143,7 +177,7 @@ animate(words, {
                 </div>
             </div>
             </div>
-            <div class="project-card">
+            <div class="project-card animate-on-scroll">
                 <div class="project-info">
                     <p class="project-tag">Web App</p>
                 <h2 class="project-title">To Do list</h2>
@@ -162,7 +196,7 @@ animate(words, {
                 </div>
             </div>
             </div>
-            <div class="project-card reverse"> 
+            <div class="project-card reverse animate-on-scroll"> 
             <div class="project-info">
                 <p class="project-tag">Web App</p>
                 <h2 class="project-title">Ticket Go</h2>
@@ -184,78 +218,82 @@ animate(words, {
 
         </section>
         <section id="skills" class="skills">
-            <h2 class="project-h2">Mis habilidades</h2>
+            <h2 class="project-h2 animate-on-scroll">Mis habilidades</h2>
             <div class="skillsBox">
-                <div class="skill-card skill-card-grid">
+                <div class="skill-card skill-card-grid animate-on-scroll stagger-1">
                     <h3 class="skill-title">Front-End</h3>
                     <div class="pyramid-icons">
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="React 90%">
                             <p>React</p>
                             <span class="tech-planet-icon"><i class="fab fa-react"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="CSS 95%">
                             <p>CSS</p>
                             <span class="tech-planet-icon"><i class="fab fa-css3-alt"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="HTML 98%">
                             <p>HTML</p>
                             <span class="tech-planet-icon"><i class="fab fa-html5"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Bootstrap 85%">
                             <p>Bootstrap</p>
                             <span class="tech-planet-icon"><i class="fab fa-bootstrap"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="JavaScript 92%">
                             <p>JavaScript</p>
                             <span class="tech-planet-icon"><i class="fab fa-js"></i></span>
                         </div>
                     </div>
                 </div>
-                <div class="skill-card skill-card-grid">
+                <div class="skill-card skill-card-grid animate-on-scroll stagger-2">
                     <h3 class="skill-title">Back-End</h3>
                     <div class="pyramid-icons">
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Java 88%">
                             <p>Java</p>
                             <span class="tech-planet-icon"><i class="fab fa-java"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Python 85%">
                             <p>Python</p>
                             <span class="tech-planet-icon"><i class="fab fa-python"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="SQL 90%">
                             <p>SQL</p>
                             <span class="tech-planet-icon"><i class="fas fa-database"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Git 95%">
                             <p>Git</p>
                             <span class="tech-planet-icon"><i class="fab fa-git-alt"></i></span>
                         </div>
-                        <div class="iconCont">
-                            <p>Sprint Boot</p>
-                            <span class="tech-planet-icon"><i class="fab fa-spring"></i></span>
+                        <div class="iconCont" data-skill="Spring Boot 80%">
+                            <p>Spring Boot</p>
+                            <span class="tech-planet-icon"><i class="fas fa-leaf"></i></span>
+                        </div>
+                        <div class="iconCont" data-skill="Docker 75%">
+                            <p>Docker</p>
+                            <span class="tech-planet-icon"><i class="fab fa-docker"></i></span>
                         </div>
                     </div>
                 </div>
-                <div class="skill-card skill-card-grid">
+                <div class="skill-card skill-card-grid animate-on-scroll stagger-3">
                     <h3 class="skill-title">QA tester</h3>
                     <div class="pyramid-icons">
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Cypress 85%">
                             <p>Cypress</p>
                             <span class="tech-planet-icon"><i class="fab fa-chrome"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="JUnit 80%">
                             <p>JUnit</p>
                             <span class="tech-planet-icon"><i class="fas fa-vial"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Postman 90%">
                             <p>Postman</p>
                             <span class="tech-planet-icon"><i class="fas fa-paper-plane"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Screenplay 75%">
                             <p>Screenplay</p>
                             <span class="tech-planet-icon"><i class="fas fa-mountain"></i></span>
                         </div>
-                        <div class="iconCont">
+                        <div class="iconCont" data-skill="Serenity 70%">
                             <p>Serenity</p>
                             <span class="tech-planet-icon"><i class="fas fa-theater-masks"></i></span>
                         </div>
@@ -265,7 +303,7 @@ animate(words, {
         </section>
     </main>
     <section>
-        <div class="contact" id="contact">
+        <div class="contact animate-on-scroll" id="contact">
             <h2 class="project-h2">Contactame</h2>
             <div class="contact-text">
                 <form action="">
